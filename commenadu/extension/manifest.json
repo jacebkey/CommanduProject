@@ -1,0 +1,48 @@
+{
+    "name": "Commenadu",
+    "version": "0.3",
+    "description": "CSCE 445 Project",
+    "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
+    "background":
+    {
+        "scripts": [ "background.js"],
+        "persistent": false
+    },
+    "page_action":
+    {
+        "default_title": "Inject Sidebar",
+        "default_icon":
+        {
+            "16": "images/get_started16.png",
+            "32": "images/get_started32.png",
+            "48": "images/get_started48.png",
+            "128": "images/get_started128.png"
+        }
+    },
+    "icons":
+    {
+        "16": "images/get_started16.png",
+        "32": "images/get_started32.png",
+        "48": "images/get_started48.png",
+        "128": "images/get_started128.png"
+    },
+    "options_page": "options.html",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "css": ["highlight.css", "bootstrap/css/bootstrap-grid.css"],
+            "js": ["jquery.min.js",
+                   "bootstrap/js/bootstrap.min.js",
+                   "rangy/rangy-core.js", "rangy/rangy-highlighter.js", "rangy/rangy-classapplier.js", "rangy/rangy-selectionsaverestore.js", "rangy/rangy-serializer.js", "rangy/rangy-textrange.js",
+                   "comments/jquery-comments.js",
+                   "lib/findAndReplaceDOMText.js",
+                   "content.js"],
+            "all_frames": true
+        }
+    ],
+	"web_accessible_resources": [
+        "images/*.png",
+        "commenadu-sidebar.html"
+	],
+    "manifest_version": 3
+}

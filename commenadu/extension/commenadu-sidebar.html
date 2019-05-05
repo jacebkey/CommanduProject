@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<meta name=description content="">
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<title>Jquery Comments Plugin</title>
+
+		<!-- Styles -->
+		<link rel="stylesheet" type="text/css" href="comments/jquery-comments.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+		<!-- Data -->
+		<!-- <script type="text/javascript" src="comments/comments-data.js"></script> -->
+
+		<!-- Libraries -->
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="comments/jquery.textcomplete.js"></script>
+		<script type="text/javascript" src="comments/jquery-comments.js"></script>
+
+		<style type="text/css">
+
+			/* Full-width input fields */
+			 input[type=text], input[type=password], input[type=email] {
+				 width: 100%;
+				 padding: 12px 20px;
+				 margin: 8px 0;
+				 display: inline-block;
+				 border: 1px solid #ccc;
+				 box-sizing: border-box;
+			}
+			/* Set a style for all buttons */
+			 button {
+				 background-color: #4CAF50;
+				 color: white;
+				 padding: 14px 20px;
+				 margin: 8px 0;
+				 border: none;
+				 cursor: pointer;
+				 width: 100%;
+			}
+			 button:hover {
+				 opacity: 0.8;
+			}
+			/* Extra styles for the cancel button */
+			 .cancelbtn {
+				 width: auto;
+				 padding: 10px 18px;
+				 background-color: #f44336;
+			}
+			 .container {
+				 padding: 16px;
+			}
+			 span.psw {
+				 float: right;
+				 padding-top: 16px;
+			}
+			/* The Modal (background) */
+			 .modal {
+				 display: none;
+				/* Hidden by default */
+				 position: fixed;
+				/* Stay in place */
+				 z-index: 1;
+				/* Sit on top */
+				 left: 0;
+				 top: 0;
+				 width: 100%;
+				/* Full width */
+				 height: 100%;
+				/* Full height */
+				 overflow: auto;
+				/* Enable scroll if needed */
+				 background-color: rgb(0,0,0);
+				/* Fallback color */
+				 background-color: rgba(0,0,0,0.4);
+				/* Black w/ opacity */
+				 padding-top: 60px;
+			}
+			/* Modal Content/Box */
+			 .modal-content {
+				 background-color: #fefefe;
+				 margin: 5% auto 15% auto;
+				/* 5% from the top, 15% from the bottom and centered */
+				 border: 1px solid #888;
+				 width: 80%;
+				/* Could be more or less, depending on screen size */
+			}
+			/* The Close Button (x) */
+			 .close {
+				 position: absolute;
+				 right: 25px;
+				 top: 0;
+				 color: #000;
+				 font-size: 35px;
+				 font-weight: bold;
+			}
+			 .close:hover, .close:focus {
+				 color: red;
+				 cursor: pointer;
+			}
+			/* Add Zoom Animation */
+			 .animate {
+				 -webkit-animation: animatezoom 0.6s;
+				 animation: animatezoom 0.6s
+			}
+			 @-webkit-keyframes animatezoom {
+				 from {
+					-webkit-transform: scale(0)
+				}
+				 to {
+					-webkit-transform: scale(1)
+				}
+			}
+			 @keyframes animatezoom {
+				 from {
+					transform: scale(0)
+				}
+				 to {
+					transform: scale(1)
+				}
+			}
+
+			/* Change styles for span and cancel button on extra small screens */
+			 @media screen and (max-width: 300px) {
+				 span.psw {
+					 display: block;
+					 float: none;
+				}
+				 .cancelbtn {
+					 width: 100%;
+				}
+			}
+
+			#comments-container {
+				padding: 20px;
+				margin: 0px;
+				font-size: 14px;
+				font-family: "Arial", Georgia, Serif;
+			}
+
+			#login-menu-actions {
+				height: auto;
+				top: 0;
+				left: 0;
+				width: 100%;
+				margin: 0;
+				text-align: center
+			}
+		</style>
+
+		<!-- Init jquery-comments -->
+		<script type="text/javascript" src="comments/init-comments.js"></script>
+
+		<!-- JS for login and registeration -->
+		<script type="text/javascript" src="comments/login.js"></script>
+
+	</head>
+	<body>
+
+		<div id="login-menu-actions">
+			<h1 style="margin-top: 0; padding-top: 15px; padding-bottom: 15px; margin-bottom: 5px">Commenadu</h1>
+
+			<div id="account-buttons">
+				<button id="open_login" style="width:auto;">Login</button>
+				<button id="open_register" style="width:auto;">Register</button>
+			</div>
+			<div id="account-info" style="display:none;">
+				<h3 id="username"></h3>
+				<div>
+					<button id="groups" style="width:auto;">Groups</button>
+					<button id="logout" style="width:auto;">Logout</button>
+				</div>
+			</div>
+
+			<div id="id01" class="modal">
+				<form class="modal-content animate" id="login_form">
+					<div class="container">
+						<label for="username"><b>Username</b></label>
+						<input type="text" placeholder="Enter Username" name="username" required>
+						<label for="password"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="password" required>
+						<button type="submit">Login</button>
+					</div>
+					<div class="container" style="background-color:#f1f1f1">
+						<button type="button" id="cancel_login" class="cancelbtn">Cancel</button>
+						<span class="psw"><a href="#">Forgot password?</a></span>
+					</div>
+				</form>
+			</div>
+
+
+			<div id="id02" class="modal">
+				<form class="modal-content animate" id="register_form">
+					<div class="container">
+						<label for="email"><b>Email</b></label>
+						<input type="email" placeholder="Enter Email" name="email" required>
+						<label for="username"><b>Username</b></label>
+						<input type="text" placeholder="Enter Username" name="username" required>
+						<label for="password"><b>Password</b></label>
+						<input type="password" placeholder="Enter Password" name="password" required>
+						<button type="submit" id="register-button">Register</button>
+					</div>
+					<div class="container" style="background-color:#f1f1f1">
+						<button type="button" id="cancel_register" class="cancelbtn">Cancel</button>
+					</div>
+				</form>
+			</div>
+
+			<div id="id03" class="modal">
+				<form class="modal-content animate" id="groups_form">
+					<div class="container">
+						<label><b>Groups</b></label><br>
+						<div id="currentGroups" style="text-align:left;"></div>
+
+						<button type="button" id="create-group-button" name="create-group-button">Create New Group</button>
+
+						<label for="groupName"><b>Group Name</b></label>
+						<input type="groupName" placeholder="Enter Group Name" name="groupName" required>
+						<button type="submit" id="join-group-button" name="groups_action" value="join">Join Group</button>
+						<button type="submit" id="leave-group-button" name="groups_action" value="leave">Leave Group</button>
+					</div>
+					<div class="container" style="background-color:#f1f1f1">
+						<button type="button" id="cancel_groups" class="cancelbtn">Cancel</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="comments-container">
+		</div>
+	</body>
+</html>

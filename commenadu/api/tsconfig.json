@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      "noEmitOnError": true,
+      "strictNullChecks": false,
+      "lib": [
+        "es6",
+        "es7",
+        "esnext",
+        "dom"
+      ],
+      "target": "es6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "resolveJsonModule": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "outDir": "build/src",
+      "plugins": [
+        {
+          "name": "typescript-tslint-plugin"
+        }
+      ]
+    },
+    "exclude": [
+      "src/migrations"
+    ],
+    "include": [
+      "src/**/*.ts", "types.d.ts"
+    ]
+}

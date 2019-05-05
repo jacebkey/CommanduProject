@@ -1,0 +1,191 @@
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.buttonMenu img{
+	width: 30px;
+	height: auto;
+}
+
+.highlight {
+	background: orange;
+	color: White;
+}
+
+.highlight[data-overlap="2"] {
+	background: green;
+	color: white;
+}
+
+.highlight[data-overlap="3"] {
+	background: red;
+	color: white;
+}
+
+#highlightFocused {
+	background: purple !important;
+	color: white !important;
+}
+
+.comment {
+	background: Blue;
+	color: white;
+}
+
+#cal1 {
+	position: absolute;
+	height: 0px;
+	width: 0px;
+	top: 100px;
+	left: 100px;
+	overflow: none;
+	z-index: -100;
+}
+
+#cal2 {
+	position: absolute;
+	height: 0px;
+	width: 0px;
+	top: 0px;
+	left: 0px;
+	overflow: none;
+	z-index: -100;
+}
+
+::selection {
+	background: SeaGreen;
+	color: White;
+}
+
+::-moz-selection {
+	background: SeaGreen;
+	color: White;
+}
+
+#textDescription {
+	line-height: 1.9em;
+	font-size: 16px;
+	margin: 10px;
+	border: 1px #333 solid;
+	padding: 5px;
+	width: 450px;
+}
+
+.selectedText {
+	position: relative;
+	background-color: SeaGreen;
+	color: #fff;
+	line-height: 1.2em;
+}
+
+.popupMenu {
+	z-index: 100;
+	display: none;
+	background: #2c2c2b;
+	color: white;
+	padding: 6px;
+	position: absolute;
+	border-radius: 4px;
+	box-shadow: 2px 3px 4px #444;
+	-webkit-animation: slideIn .25s;
+	animation: slideIn .25s;
+}
+
+@-webkit-keyframes slideIn {
+	from {
+		bottom: 8px;
+		opacity: 0;
+		height: 10px;
+	}
+	to {
+		bottom: 20px;
+		opacity: 1;
+		height: 44px;
+	}
+}
+
+@-moz-keyframes slideIn {
+	from {
+		bottom: 8px;
+		opacity: 0;
+		height: 10px;
+	}
+	to {
+		bottom: 20px;
+		opacity: 1;
+		height: 44px;
+	}
+}
+
+@keyframes slideIn {
+	from {
+		bottom: 8px;
+		opacity: 0;
+		height: 10px;
+	}
+	to {
+		bottom: 20px;
+		opacity: 1;
+		height: 44px;
+	}
+}
+
+
+@-webkit-keyframes slideLeft{
+    from{
+     width: 0%; opacity: 0;
+    }
+    to{
+     width: 200px; opacity: 1;
+    }
+   }
+
+   @-moz-keyframes slideLeft{
+    from{
+      width: 0%; opacity: 0;
+     }
+     to{
+      width: 200px; opacity: 1;
+     }
+   }
+
+   @keyframes slideLeft{
+    from{
+      width: 0%; opacity: 0;
+     }
+     to{
+      width: 200px; opacity: 1;
+     }
+   }
+
+   @-webkit-keyframes slideRight{
+    to{
+     width: 0%; opacity: 0;
+    }
+    from{
+     width: 200px; opacity: 1;
+    }
+   }
+
+   @-moz-keyframes slideRight{
+    to{
+      width: 0%; opacity: 0;
+     }
+     from{
+      width: 200px; opacity: 1;
+     }
+   }
+
+   @keyframes slideRight{
+    to{
+      width: 0%; opacity: 0;
+     }
+     from{
+      width: 200px; opacity: 1;
+     }
+   }
