@@ -21,7 +21,7 @@
     "passport-local": "^1.0.0",
     "random-words": "^1.1.0",
     "sqlite3": "^4.0.6",
-    "typeorm": "^0.2.12"
+    "typeorm": "^0.2.25"
   },
   "devDependencies": {
     "@types/bcrypt-nodejs": "^0.0.30",
